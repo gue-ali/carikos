@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Membuat atribut form</title>
+    </head>
+    <body>
+        <!--Form atribut value-->
+        <form>
+            ini atribut value<br>
+            Nama Depan:<input type="text" value="nama"><br>
+            Nama Belakang:<input type="text">
+        
+        <!--atribute read only-->
+        
+            <p> ini atribut readonly<br>
+                Nama Depan:<input type="text" value="nama" readonly><br>
+                Nama Belakang:<input type="text">
+
+                <p> ini atribut disabled <br>
+                Nama Depan :<input type="text" value="nama" disabled><br/>
+                Nama Belakang : <input type="text">
+                
+            <p> ini atribut size <br>
+                Nama Depan :<input type="text" value="nama" size="50"><br/>
+                Nama Belakang : <input type="text">
+
+            <p> ini atribut maxlength <br>
+                Nama Depan :<input type="text" value="nama" maxlength="20"><br/>
+                Nama Belakang : <input type="text">
+            
+            <p> ini atribut list <br>
+                <label>Browser:</label>
+                <select name="Browser">
+                    <option value="Chrome">Chrome</option>
+                    <option value="Mozila">Mozila</option>
+                    <option value="Opera">Opera</option>
+                </select>
+                <p>ini atribut min dan max <br>
+                    <input type="date" name="day" max="1999-12-31">
+                    <input type="date" name="day" min="2025-01-02">
+                <p>ini atribut laceholder <br>
+                    <input type="text" name="nama" placeholder="masukkan nama">   
+        </form>
+    </body>
+</html>
