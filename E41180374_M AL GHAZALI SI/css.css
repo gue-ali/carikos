@@ -1,23 +1,6 @@
-h1{
-    color: crimson;
-    font-family: fantasy;
-    text-align: center;
+body{
+	background-color: rgba(14, 13, 13, 0.692);
 }
-
-.kotak{
-	padding: 50px;
-	width: 100px;
-	color: #fff;
-	margin: 10px;
-	background: orange;	
-}
- 
-#kotak{
-	width: 400px;
-	color: #fff;
-	background: blue;
-	padding: 50px;
-}
-div p.kalimat{
-	color: blue;
+.p{
+	color: white;
 }
