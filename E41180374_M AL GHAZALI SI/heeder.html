@@ -43,25 +43,45 @@
 
     .td {
         padding: 0px 50px 0px 50px;
+        display: inline;
+        list-style: none;
     }
 
     .img {
         width: 140px;
         height: 150px;
+        padding: 0px 20px 0px 20px;
     }
 
     .imgfooter {
         width: 40px;
         height: 50px;
     }
+    .imgfooter1 {
+        width: 40px;
+        height: 50px;
+        padding-left: 50px;
+    }
 
     .li {
         display:inline;
     }
+    .list{
+        list-style: none;
+        display: inline;
+    }
 
-    
-
-
+    footer{
+        padding: 100px 0px 0px 600px;"
+    }
+    .ul1{
+        padding-left: 300px;
+        padding-top: 75px;
+    }
+    .td1{
+        display: inline;
+        list-style: none;
+    }
     
   
 </style>
@@ -85,32 +105,33 @@
 <section>
     <h1 style="text-align: center; padding-bottom: 50px;">Panduan Belajar Bahasa Pemrograman Mobile</h1>
     <br>
-    <center>
-    <table>
-        <tr>
-            <td class="td"><center><img src="java.jpg" alt="Gambar Java" class="img" ></center></td>
-            <td class="td"><center><img src="android.png" alt="Gambar Android" class="img"></center></td>
-            <td class="td"><center><img src="swift.jpg" alt="Gambar Swift" class="img"></center></td>
-        </tr>
-        <tr>
-            <td class="td">Bahasa Pemrograman Java</td>
-            <td class="td">Bahasa Pemrograman Android</td>
-            <td class="td">Bahasa Pemrograman Swings</td>
-        </tr>
-    </table>
-</center>
+    <div class="ul1">
+        
+            <ul>
+                <li class="td"><img src="java.jpg" alt="Gambar Java" class="img" ></li>
+                <li class="td"><img src="android.png" alt="Gambar Android" class="img"></li>
+                <li class="td"><img src="swift.jpg" alt="Gambar Swift" class="img"></li>
+                </ul>
+            
+            <br>
+            <ul>
+                <li class="td">Bahasa Pemrograman Java</li>
+                <li class="td">Bahasa Pemrograman Android</li>
+                <li class="td">Bahasa Pemrograman Swings</li>
+        
+        </ul>
+    </div>
+    
 </section>
 
-<footer style="padding-bottom: 10px; margin-top: 130px;">
-    <center>    
-    <table>
-        <tr>
-            <td><img src="fb.jpg" alt="" class="imgfooter"></td>
-            <td><img src="twtter.png" alt="" class="imgfooter"></td>
-        </tr>        
-    </table>
+<footer >
+       <ul class="list"> 
+    
+            <li class="list"><img src="fb.jpg" alt="" class="imgfooter1"></li>
+            <li class="list"><img src="twtter.png" alt="" class="imgfooter"></li>
+        </ul>    
     <p>Copyright 2019 Hello Pakvic</p>
-</center>
+    
 </footer>
-</body>
+</body> 
 </html>
