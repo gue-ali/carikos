@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>latihan</title>
+</head>
+
+<body>
+    <form action="#" method="POST">
+        <p>Monggo input Angka</p>
+        <input id="angka" type="text" name="Angka">
+        <button type="button" onclick="tampilkan()">Cek</button>
+    </form>  
+<p id="adi"></p>
+    <script>
+        
+        function tampilkan(){
+            var inputan = document.getElementById('angka').value;
+            var hasil = inputan % 2;
+            if(hasil == 0){
+            var tampil = "genap"
+            document.getElementById('adi').innerHTML=tampil;
+            }
+            
+            else if(hasil == 1){
+                var tampil ="ganjil"
+                document.getElementById('adi').innerHTML=tampil;    
+            }
+            else if (hasil < 0){
+                alert("gaboleh minus hasilnya")
+            }
+            else{
+                alert("masukkan angka bosku")
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>
