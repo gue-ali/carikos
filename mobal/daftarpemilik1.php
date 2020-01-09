@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Login Penyewa</title>
+    <title>Login Pemilik</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="css/aos.css">
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.css">
 
     <style>
         body{
@@ -32,56 +31,79 @@
 
   <body>
         <nav class="navbar navbar-light bg-transparant">
-                <a class="navbar-brand" href="penyewa.php">
+                <a class="navbar-brand" href="daftarpemilik.php">
                  <p style="color: #91b029 ;">< Kembali</p> 
                 </a>
               </nav>
-
-        
-<div class="container">
-    <div class="card-group">
-         <div class="card">
-             <div class="container">
-            <div class="card-body">
-                 <h5 class="card-title">Isi data kos:</h5>
-                 <div class="daftar">
-                 <input type="text" placeholder="nama kos" name="nama kos" id="nama kos">
-                 <input type="text" placeholder="alamat lengkap kos" name="alamat lengkap kos" id="alamat lengkap kos">
-                 <input type="text" placeholder="harga/bulan atau tahun" name="harga/bulan atau tahun" id="harga/bulan atau tahun">
-                 <input type="text" placeholder="luas kamar" name="luas kamar" id="luas kamar">
-                </div>
-                <div class="row">
-               <div class="col-md-12 form-group">
-                 <select name="" id="" class="form-control w-100">
-                   <option value="">Gender</option>
-                   <option value="">Laki-laki</option>
-                   <option value="">Perempuan</option>
-                 </select>
-               </div>
-             </div>
-
-            </div>
-    </div>
-         
-     </div>
-         <div class="card">
-         <div class="container">
-         <div class="card-body">
-             <h5 class="card-title">Fasilitas Kamar</h5>
-              <input type="checkbox" name="kamar" value="2">
-             
-         </div>
-    </div>
-       
-  </div>
-  <div class="card">
-  <div class="container">
-    <div class="card-body">
-      <h5 class="card-title">Fasilitas kamar mandi</h5>
-    </div>
-  </div>
-</div>
-</div>
+        <section>
+                <form action="cekpemilik.php" method="POST" id="myfrom">
+                    <div class="login-form">
+                        <h4>CARIKOS</h4>
+                         <div class="textbox">
+                             <input type="text" placeholder="nama lengkap" name="namalengkap" id="nama lengkap" required>
+                         </div>
+                         <div class="textbox">
+                             <input type="text" placeholder="username" name="username" id="username" required>
+                         </div>
+                         <div class="textbox">
+                             <input type="text" placeholder="no. hp" name="nohp" id="no. hp" required>
+                         </div>
+                         <div class="textbox">
+                             <input type="text" placeholder="alamat" name="alamat" id="alamat" required>
+                         </div>
+                         <div class="textbox">
+                             <input type="text" placeholder="email" name="email" id="email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+                         </div>
+                         <div class="password">
+                             <input type="password" placeholder="Password" name="password" id="password" required>
+                         </div>
+                         <div class="password">
+                             <input type="password" placeholder="comfirm password" name="comfrimpassword" id="comfirm password" required>
+                         </div>
+                         <div class="login-btn">
+                             <input class="btn2" type="submit" name="Daftar" value="Daftar">
+                         
+                    
+               </form>
+                </section>
+                <script>
+		// just for the demos, avoids form submit
+		jQuery.validator.setDefaults({
+		  	debug: true,
+		  	success:  function(label){
+        		label.attr('id', 'valid');
+   		 	},
+		});
+		$( "#myform" ).validate({
+		  	rules: {
+			    password: "required",
+		    	comfirm_password: {
+		      		equalTo: "#password"
+		    	}
+		  	},
+		  	messages: {
+		  		namalengkap: {
+		  			required: "Masukkan Nama Lengkap"
+		  		},
+		  		alamat: {
+		  			required: "Masukkan Alamat"
+		  		},
+				nohp: {
+		  			required: "Masukkan No Telepon"
+		  		},
+		  		email: {
+		  			required: "Masukkan email"
+		  		},
+		  		password: {
+	  				required: "Masukkan password"
+		  		},
+		  		comfrimpassword: {
+		  			required: "Masukkan password",
+		      		equalTo: "Password yang anda masukkan salah"
+		    	}
+		  	}
+		});
+	</script>
       
 
 

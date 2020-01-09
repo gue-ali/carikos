@@ -36,17 +36,20 @@
                 </a>
               </nav>
         <section>
-                <form action="proses.php" method="POST">
+                <form action="cek.php" method="POST">
                     <div class="login-form">
                         <h4>CARIKOS</h4>
                          <div class="textbox">
                              <input type="text" placeholder="Username" name="username" id="username">
+                             
                          </div>
                          <div class="password">
                              <input type="password" placeholder="Password" name="password" id="password" >
+                             
                          </div>
                          <div class="login-btn">
                              <input class="btn2" type="submit" name="login" value="Login">
+
                          </div>
                          <p style="color: white;">Belum punya akun? <a href="daftarpemilik1.php">Daftar sekarang</a></p> 
                     </div>

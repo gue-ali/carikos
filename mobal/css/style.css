@@ -70,17 +70,24 @@
 }
 
 /* isi daftar */
-.card-body input{
+.card-body input[type="checkbox"]{
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 2px solid #e7ebdd ;
+  width: 199%;
+  padding-left: 10px;
+}
+.card-body input[type="text"]{
   margin: 5px 0;
   border-radius: 5px;
   border: 2px solid #e7ebdd ;
   width: 100%;
   padding-left: 10px;
 }
+
+
+
 /* checkbox */
-
-
-
 
 
 ul.cxbx {
