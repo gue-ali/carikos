@@ -30,13 +30,14 @@ left join tbkos c on a.kdkos=c.kdkos where a.status='1'");
     <link rel="stylesheet" href="css/style.css">
 
   </head>
-
   <style>
         body{
-            background-image: url("images/penyewa.png");
+            background-color: black;
             background-size: cover;
         }
     </style>
+
+
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -111,11 +112,11 @@ left join tbkos c on a.kdkos=c.kdkos where a.status='1'");
       </div>
     </div>
 
-    <div class="site-section bg-gray-6">
+    <div class="site-section bg-white-6s">
       <div class="container">
-      <div class="jumbotron" style="padding: 15px 30px">
-      <h3 align="center" style="color: black"><strong>
-			Rekomendasi kamar kost untuk Anda :<strong>	</h3>
+      
+      
+      <h3 class="heading-29201 text-center text-white">Rekomenasi untuk anda</h3>
     <br>
         
         <div class="row">
@@ -129,11 +130,11 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
               <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
               
               <div class="text">
-                <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-              <div class="text">
-                <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                <h4><a href="#"><?= $p['namakos']; ?></a></h4>
+              <div class="text" >
+                <h5><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?> / bulan</a></h5>
                 <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                <br>
+          
               </div>
               
               </div>
@@ -149,7 +150,6 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
         </div>
       </div>
     </div>
-    </div>
 
 
     
@@ -162,6 +162,8 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
         
         
           <div class="col-md-4">
+            <br>
+            
             <h3 class="text-white h5 mb-3">CARIKOS</h3>
             <p>Dapatkan "info kost murah" hanya di Carikos </p>
           </div>

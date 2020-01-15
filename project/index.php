@@ -41,7 +41,7 @@ $row1 = mysqli_fetch_array($result1);
   </head>
   <style>
         body{
-            background-image: url("images/penyewa.png");
+            background-color: black;
             background-size: cover;
         }
     </style>
@@ -144,9 +144,8 @@ $row1 = mysqli_fetch_array($result1);
 
     <div class="site-section bg-gray-6">
       <div class="container">
-      <div class="jumbotron" style="padding: 15px 30px">
-      <h3 align="center" style="color: black" ><strong>
-			Rekomendasi kamar kost untuk Anda :<strong>	</h3>
+        
+      <h3 class="heading-29201 text-center text-white">Rekomenasi untuk anda</h3>
     <br>
         
         <div class="row">
@@ -159,14 +158,14 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
             <div class="media-38289">
               <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
               <div class="text">
-                <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
+                <h4 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h4>
               <div class="text">
-                <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                 <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                 <br>
-                <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-primary text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-primary text-white px-4 py-3">Chat Pemilik</a>&nbsp;
+                <div class="row-left">
+                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
+                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
               </div>
               </div>
               </div>
@@ -180,9 +179,9 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
           
           
         </div>
-      </div>
+      
     </div>
-    </div>
+            </div>
 
     
     
@@ -199,6 +198,8 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
         
         
           <div class="col-md-4">
+            <br>
+            
             <h3 class="text-white h5 mb-3">CARIKOS</h3>
             <p>Dapatkan "info kost murah" hanya di Carikos </p>
           </div>

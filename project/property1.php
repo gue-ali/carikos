@@ -28,6 +28,13 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
     <link rel="stylesheet" href="css/style.css">
 
   </head>
+  <style>
+        body{
+            background-color: black;
+            background-size: cover;
+        }
+    </style>
+
 
   
 
@@ -91,12 +98,13 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('images/xxx.jpg')">
+      <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('images/bg.jpeg')">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
               <h1 class="mb-2">CARIKOS</h1>
               <p class="text-white">Dapatkan infonya dan langsung Bisa Booking di CARIKOS </p>
+              
             </div>
           </div>
         </div>
@@ -1065,6 +1073,7 @@ if (isset($_POST['pilih'])) {
     ?>    
 </div>
               </div>
+</div>
 
 
 <footer class="site-footer">
@@ -1072,6 +1081,7 @@ if (isset($_POST['pilih'])) {
         
         
           <div class="col-md-4">
+            <br>
             <h3 class="text-white h5 mb-3">CARIKOS</h3>
             <p>Dapatkan "info kost murah" hanya di Carikos </p>
           </div>

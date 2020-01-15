@@ -42,6 +42,13 @@ $ka = mysqli_fetch_array($kamar);
   </style>
 
   </head>
+  <style>
+        body{
+            background-color: #e6dfdf;
+            background-size: cover;
+        }
+    </style>
+
 
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
@@ -182,12 +189,15 @@ $ka = mysqli_fetch_array($kamar);
     <span class="sr-only">Next</span>
   </a>
 </div>
+<br>
+<br>
        
 
         <div class="container">
          <div class="card">
           <div class="container">
          <div class="card-body">
+          
             
                <h5 class="card-title">Fasilitas Bersama</h5>
                <?php
@@ -530,23 +540,7 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
 
 
        
-    <div class="site-section bg-primary">
-      <div class="container block-13">
-          <div class="testimonial-38920 d-flex align-items-start">
-            <div>
-              <h3 class="mb-4">Carikos</h3>
-              <p>Carikos adalah sistem informasi pencarian kost di kabupaten jember berbasis web. fitur-fitur di dalam carikos yaitu fitur tambah kost, fitur filter kost, fitur pemesanan dan fitur chat.</p>
-              <div class="mt-4">
-              </div>
-            
-          </div>
-
-         
-
-          
-        </div>
-      </div>
-    </div>
+   
 
     
 
@@ -555,6 +549,7 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
         
         
           <div class="col-md-4">
+            <br>
             <h3 class="text-white h5 mb-3">CARIKOS</h3>
             <p>Dapatkan "info kost murah" hanya di Carikos </p>
           </div>

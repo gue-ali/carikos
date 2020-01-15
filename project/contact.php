@@ -180,30 +180,7 @@ $row1 = mysqli_fetch_array($result1);
     
 
     
-    <footer class="site-footer">
-      <div class="container">
-        
-        
-          <div class="col-md-4">
-            <h3 class="text-white h5 mb-3">CARIKOS</h3>
-            <p>Dapatkan "info kost murah" hanya di MamiKos </p>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </footer>
-
+  c
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
