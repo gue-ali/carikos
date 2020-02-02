@@ -32,7 +32,7 @@ left join tbkos c on a.kdkos=c.kdkos where a.status='1'");
   </head>
   <style>
         body{
-            background-color: black;
+            background-color: white;
             background-size: cover;
         }
     </style>
@@ -99,7 +99,7 @@ left join tbkos c on a.kdkos=c.kdkos where a.status='1'");
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('images/bg.jpeg')">
+      <div class="site-section-cover overlay" data-stellar-background-ratio="1" style="background-image: url('images/ai.jpg')">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
@@ -114,9 +114,7 @@ left join tbkos c on a.kdkos=c.kdkos where a.status='1'");
 
     <div class="site-section bg-white-6s">
       <div class="container">
-      
-      
-      <h3 class="heading-29201 text-center text-white">Rekomenasi untuk anda</h3>
+      <h3 class="text-left" style="margin-top:-50px;"><strong>Rekomendasi untuk anda</strong></h3>
     <br>
         
         <div class="row">

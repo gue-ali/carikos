@@ -2,8 +2,7 @@
 session_start();
 include 'inc/header.php';
 $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  where nopenyewa='$_SESSION[kode]'"));
-$ceksewa = mysqli_query($koneksi, "SELECT a.*, c.namakos, c.kdpemilik from chat a 
-left join tbkos c on a.kdkos=c.kdkos where a.id_penyewa='$_SESSION[kode]'");
+$ceksewa = mysqli_query($koneksi, "SELECT a.*, c.namakos, c.kdpemilik from chat a left join tbkos c on a.kdkos=c.kdkos where a.id_penyewa='$_SESSION[kode]'");
 
 if (isset($_GET['aksi'])) {
   if ($_GET['aksi'] == 'hapus') {
