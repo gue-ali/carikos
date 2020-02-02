@@ -30,7 +30,7 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
   </head>
   <style>
         body{
-            background-color: black;
+            background-color: white;
             background-size: cover;
         }
     </style>
@@ -98,35 +98,18 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
       </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('images/bg.jpeg')">
+      <div class="site-section-cover overlay" data-stellar-background-ratio="1" style="background-image: url('images/bg.jpeg')">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-7">
-              <h1 class="mb-2">CARIKOS</h1>
-              <p class="text-white">Dapatkan infonya dan langsung Bisa Booking di CARIKOS </p>
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <br>
-    
-
-    <section>
+              <h1 class="mb-2">Pilih berdasarkan :</h1>
+              <br>
+              <section>
     <form action="" method="POST">
       <div class="birril">
         <div class="container">
           <div class="card-group">
-           <div class="card" style="padding: 10px 10px">
-             <div class="container">
-               <div class="card-body">
-                <div class="row">
                <div class="col-md-12 form-group">
-               <label>Pilih berdasarkan</label>
-
-
-                  <label>Gender</label>
                  <select name="jeniskelamin"  class="form-control w-100">
                  <option value="#">Pilih jenis kelamin</option>
                    <option value="lk">Laki-laki</option>
@@ -134,7 +117,6 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
                  </select>
                </div>
                <div class="col-md-12 form-group">
-                  <label>Lokasi</label>
                  <select name="lokasi"  class="form-control w-100">
                  <option value="#">Pilih lokasi</option>
                    <option value="terdekat">terdekat-terjauh</option>
@@ -142,28 +124,32 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
                  </select>
                </div>
                <div class="col-md-12 form-group">
-                  <label>Harga</label>
                  <select name="harga"  class="form-control w-100">
                  <option value="#">Pilih harga</option>
                    <option value="terendah">terendah-tertinggi</option>
                    <option value="tertinggi">tertinggi-terendah</option>
                  </select>
+                 <br>
+               <input class="btn btn-primary"  style="float:right" type="submit" name="pilih" value="cari">
                </div>
+               
 
                 </label>
               </div>
             </div>
       </form>
 
-            <div class="container">        
-               <input class="btn btn-primary"  style="float:right" type="submit" name="pilih" value="cari">
-</div>
-          
-          
     </section>
+            
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
     
-    <div class="site-section bg-white">
       <div class="container">
         
         <div class="row">
@@ -186,8 +172,8 @@ if (isset($_POST['pilih'])) {
                 <div class="media-38289">
                   <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                   <div class="text">
-                  <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                    <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                  <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                    <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                     <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                     <br>
                    
@@ -221,8 +207,8 @@ if (isset($_POST['pilih'])) {
                   <div class="media-38289">
                     <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                     <div class="text">
-                    <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                      <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                    <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                      <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                       <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                       <br>
                       </div>
@@ -254,8 +240,8 @@ if (isset($_POST['pilih'])) {
                     <div class="media-38289">
                       <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                       <div class="text">
-                      <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                        <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                      <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                        <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                         <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                         <br>
                       </div>
@@ -287,8 +273,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                         </div>
@@ -322,8 +308,8 @@ if (isset($_POST['pilih'])) {
                     <div class="media-38289">
                       <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                       <div class="text">
-                      <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                        <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                      <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                        <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                         <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                         <br>
                       </div>
@@ -355,8 +341,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                         </div>
@@ -388,8 +374,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                           </div>
@@ -422,8 +408,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                         </div>
@@ -455,8 +441,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                           </div>
@@ -486,8 +472,8 @@ if (isset($_POST['pilih'])) {
                   <div class="media-38289">
                     <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                     <div class="text">
-                    <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                      <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                    <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                      <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                       <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                       <br>
                       </div>
@@ -518,8 +504,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                         </div>
@@ -549,8 +535,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                           </div>
@@ -580,8 +566,8 @@ if (isset($_POST['pilih'])) {
                     <div class="media-38289">
                       <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                       <div class="text">
-                      <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                        <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                      <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                        <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                         <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                         <br>
                       </div>
@@ -610,8 +596,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                         </div>
@@ -641,8 +627,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                           </div>
@@ -672,8 +658,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                         </div>
@@ -702,8 +688,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                             
@@ -735,8 +721,8 @@ if (isset($_POST['pilih'])) {
                   <div class="media-38289">
                     <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                     <div class="text">
-                    <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                      <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                    <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                      <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                       <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                       <br>
                       </div>
@@ -767,8 +753,8 @@ if (isset($_POST['pilih'])) {
                     <div class="media-38289">
                       <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                       <div class="text">
-                      <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                        <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                      <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                        <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                         <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                         <br>
                         
@@ -800,8 +786,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                           
@@ -834,8 +820,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                             
@@ -871,8 +857,8 @@ if (isset($_POST['pilih'])) {
                       <div class="media-38289">
                         <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                         <div class="text">
-                        <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                          <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                           <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                           <br>
                           
@@ -906,8 +892,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                             
@@ -940,8 +926,8 @@ if (isset($_POST['pilih'])) {
                           <div class="media-38289">
                             <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                             <div class="text">
-                            <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                              <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                            <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                              <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                               <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                               <br>
                               
@@ -975,8 +961,8 @@ if (isset($_POST['pilih'])) {
                         <div class="media-38289">
                           <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
-                          <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                            <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
                             
@@ -1010,8 +996,8 @@ if (isset($_POST['pilih'])) {
                           <div class="media-38289">
                             <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                             <div class="text">
-                            <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                              <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                            <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h>
+                              <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                               <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                               <br>
                               
@@ -1045,8 +1031,8 @@ if (isset($_POST['pilih'])) {
                 <div class="media-38289">
                   <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                   <div class="text">
-                  <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                    <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
+                  <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                    <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                     <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                     <br>
                    
@@ -1078,29 +1064,33 @@ if (isset($_POST['pilih'])) {
 
 <footer class="site-footer">
       <div class="container">
-        
-        
-          <div class="col-md-4">
-            <br>
-            <h3 class="text-white h5 mb-3">CARIKOS</h3>
-            <p>Dapatkan "info kost murah" hanya di Carikos </p>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+        <div class="row">
+        <div class="col-lg-4 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="text-black mb-4">CARIKOS</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3">
+                  <span>Dapatkan "info kost murah" hanya di CariKos.</span></li>
+              </ul>
             </div>
           </div>
-
+          <div class="col-md-3 ml-auto">
+            <ul class="list-unstyled menu-arrow">
+            </ul>
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="text-black mb-4">Info kontak</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3"><span class="d-block text-black">Telphone:</span><span>081515404068</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>carikos@gmail.com</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
+        
       </div>
     </footer>
-
 
     </div>
 

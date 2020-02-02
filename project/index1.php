@@ -118,6 +118,7 @@ left join tbkos c on a.kdkos=c.kdkos where a.status='1'");
     <br>
         
         <div class="row">
+          
 <?php
 $no = 1;
 while ($p = mysqli_fetch_assoc($ceksewa)) {
@@ -128,14 +129,13 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
               <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
               
               <div class="text">
-                <h4><a href="#"><?= $p['namakos']; ?></a></h4>
-              <div class="text" >
+                <h5><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
                 <h5><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?> / bulan</a></h5>
                 <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
           
               </div>
               
-              </div>
+              
             </div>
           </div>
           <?php
@@ -149,35 +149,52 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
       </div>
     </div>
 
-
-    
-    
-    
-
-
-    <footer class="site-footer">
+    <div class="kolom">
       <div class="container">
-        
-        
-          <div class="col-md-4">
-            <br>
-            
-            <h3 class="text-white h5 mb-3">CARIKOS</h3>
-            <p>Dapatkan "info kost murah" hanya di Carikos </p>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+    <p><strong>Carikos - Aplikasi Pencari Info Kost di Area kampus </strong></p>
+    <p >Carikos adalah sistem informasi pencarian kost di kabupaten jember berbasis web. fitur-fitur di dalam carikos yaitu fitur tambah kost, fitur filter kost, fitur pemesanan dan fitur chat. </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p><strong>Fitur Carikos </strong></p>
+    <li>fitur tambah kos : fitur ini diperuntukkan untuk user pemilik kot agar dapaf menambahkan dan mempromosikan kost mereka</li>
+    <li>fitur filter kost : fitur ini di peruntukkan untuk user pencari kost agar dapat mencari kost sesuai kebutuhan mereka</li>
+    <li>fitur chat : fitur ini di buat agar pemilik kost dapat memberikan info kost dan pencari kost dapat mendapatkan info kost lebih lanjut</li>
+     <li>fitur pemesanan : fitur ini di peruntukan untuk user pencari kost mengisu datadiri untuk melakukan pemesanan</li>
+            </div>
+            </div>
+    
+    
+
+
+            <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+        <div class="col-lg-4 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="text-black mb-4">CARIKOS</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3">
+                  <span>Dapatkan "info kost murah" hanya di CariKos.</span></li>
+              </ul>
             </div>
           </div>
-
+          <div class="col-md-3 ml-auto">
+            <ul class="list-unstyled menu-arrow">
+            </ul>
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="text-black mb-4">Info kontak</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3"><span class="d-block text-black">Telphone:</span><span>081515404068</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>carikos@gmail.com</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
+        
       </div>
     </footer>
 

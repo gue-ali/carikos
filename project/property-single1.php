@@ -492,80 +492,37 @@ $ka = mysqli_fetch_array($kamar);
           <br>
           <br>
     
-    <div class="site-section bg-black">
-      <div class="container">
-
-
-        <div class="row justify-content-center">
-          <div class="col-md-6 text-center">
-            <h3 class="heading-29201 text-center text-white">Pilih lainnya</h3>
-            
-            
-          </div>
-        
-        </div>
-        <br>
-        <div class="row">
-<?php
-$no = 1;
-while ($p = mysqli_fetch_assoc($ceksewa)) {
-  ?>
-          
-          <div class="col-md-4 mb-5">
-            <div class="media-38289">
-              <a href="property-single1.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-              <div class="text">
-              
-                <h3 class="mb-3"><a href="#"><?= $p['namakos']; ?></a></h3>
-                <h3 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h3>
-                <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                <br>
-                
-              </div>
-            </div>
-          </div>
-          <?php
-                $no++;
-              } ?>
-     
-
-          
-          
-        </div>
-      </div>
-    </div>
-    </div>
-      </div>
-    </div>
-
-
-       
    
 
     
 
-    <footer class="site-footer">
+          <footer class="site-footer">
       <div class="container">
-        
-        
-          <div class="col-md-4">
-            <br>
-            <h3 class="text-white h5 mb-3">CARIKOS</h3>
-            <p>Dapatkan "info kost murah" hanya di Carikos </p>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
+        <div class="row">
+        <div class="col-lg-4 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="text-black mb-4">CARIKOS</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3">
+                  <span>Dapatkan "info kost murah" hanya di CariKos.</span></li>
+              </ul>
             </div>
           </div>
-
+          <div class="col-md-3 ml-auto">
+            <ul class="list-unstyled menu-arrow">
+            </ul>
+          </div>
+          <div class="col-lg-4 ml-auto">
+            <div class="bg-white p-3 p-md-5">
+              <h3 class="text-black mb-4">Info kontak</h3>
+              <ul class="list-unstyled footer-link">
+                <li class="d-block mb-3"><span class="d-block text-black">Telphone:</span><span>081515404068</span></li>
+                <li class="d-block mb-3"><span class="d-block text-black">Email:</span><span>carikos@gmail.com</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
+        
       </div>
     </footer>
 
