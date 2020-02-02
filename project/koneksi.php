@@ -1,5 +1,5 @@
 <?php
-$base_url = "http://localhost/mobaladi/";
+$base_url = "http://localhost/carikos/project/";
 $koneksi = mysqli_connect("localhost","root","","carikos");
 
 if(mysqli_connect_errno()){

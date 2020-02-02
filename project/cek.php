@@ -17,6 +17,7 @@ if ($cek > 0) {
     $_SESSION['status'] = 'login';
     header("location:profilpemilik.php");
 }
+
 else if($cek==null){
     echo"<script>alert('username dan password salah');window.history.back();</script>";
 }
