@@ -75,8 +75,6 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li><a href="index1.php" class="nav-link">Beranda</a></li>
-                  <li><a href="about1.php" class="nav-link">Tentang</a></li>
-                  <li><a href="contact1.php" class="nav-link">Kontak</a></li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Login
@@ -146,7 +144,7 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
     </div>
     
 
-        <div style="padding-top: 50px">
+        <div style="padding-top: 15px">
       <div class="container">
       <div class="row">
         <?php
