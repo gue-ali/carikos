@@ -130,6 +130,9 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
       <div class="birril">
         <div class="container">
           <div class="card-group">
+          <div class="col-md-12 form-group">
+                 <input  class="form-control w-100" type="text" placeholder="Jalan" name="jalan" id="Jalan">
+               </div>
                <div class="col-md-12 form-group">
                  <select name="jeniskelamin"  class="form-control w-100">
                  <option value="#">Pilih jenis kelamin</option>
@@ -138,14 +141,6 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
                  </select>
                </div>
                <div class="col-md-12 form-group">
-                 <select name="lokasi"  class="form-control w-100">
-                 <option value="#">Pilih lokasi</option>
-                   <option value="terdekat">terdekat-terjauh</option>
-                   <option value="terjauh">terjauh-terdekat</option>
-                 </select>
-               </div>
-               <div class="col-md-12 form-group">
-              
                  <select name="harga"  class="form-control w-100">
                  <option value="#">Pilih harga</option>
                    <option value="terendah">terendah-tertinggi</option>
@@ -179,9 +174,8 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
         <?php
 if (isset($_POST['pilih'])) {
   $gander = $_POST['jeniskelamin'];
-  $jarak = $_POST['lokasi'];
+  $jarak = $_POST['jalan'];
   $harga = $_POST['harga'];
-  
   
   if ($gander=='lk') {
     
@@ -222,11 +216,11 @@ if (isset($_POST['pilih'])) {
         </div>
     <?php
     }
-    else if ($gander=='lk' && $jarak=='terdekat') {
+    else if ($gander=='lk' && $jarak==$jarak) {
     
       $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-      left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' ORDER BY c.kampus ASC");
-        $no = 1;
+      left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' c.alamat LIKE '%".$jarak."%'");
+      $no = 1;
       while ($p = mysqli_fetch_assoc($ceksewa)) {
         ?>
                 
@@ -261,10 +255,10 @@ if (isset($_POST['pilih'])) {
           </div>
       <?php
       }
-      else if ($gander=='lk' && $jarak=='terdekat' && $harga=='terendah') {
+      else if ($gander=='lk' && $jarak==$jarak && $harga=='terendah') {
     
         $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-        left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' ORDER BY a.harga ASC");
+        left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' c.alamat LIKE '%".$jarak."%' ORDER BY a.harga ASC");
           $no = 1;
         while ($p = mysqli_fetch_assoc($ceksewa)) {
           ?>
@@ -299,126 +293,11 @@ if (isset($_POST['pilih'])) {
             </div>
         <?php
         }
-        else if ($gander=='lk' && $jarak=='terdekat' && $harga=='tertinggi') {
-    
-          $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-          left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' ORDER BY a.harga DESC");
-            $no = 1;
-          while ($p = mysqli_fetch_assoc($ceksewa)) {
-            ?>
-                    
-                    <div class="col-md-4 mb-5">
-                      <div class="media-38289">
-                        <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                        <div class="text">
-                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?><strong></a></h5>
-                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                          <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                          <br>
-                          <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                        </div>
-                      </div>
-          </div>    
-                    <?php
-                          $no++;
-                        } ?>
-                      </div>
-                    </div>
-                    
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-          <?php
-          }
-          
-  
-      else if ($gander=='lk' && $jarak=='terjauh') {
-    
-        $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-        left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' ORDER BY c.kampus DESC");
-          $no = 1;
-        while ($p = mysqli_fetch_assoc($ceksewa)) {
-          ?>
-                  
-                  <div class="col-md-4 mb-5">
-                    <div class="media-38289">
-                      <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                      <div class="text">
-                      <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a><strong></h5>
-                        <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                        <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                        <br>
-                        <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                      </div>
-                    </div>
-        </div>
-                  <?php
-                        $no++;
-                      } ?>
-                    </div>
-                  </div>
-                  
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-        <?php
-        }
-        else if ($gander=='lk' && $jarak=='terjauh' && $harga=='terendah') {
-    
-          $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-          left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' ORDER BY c.harga ASC");
-            $no = 1;
-          while ($p = mysqli_fetch_assoc($ceksewa)) {
-            ?>
-                    
-                    <div class="col-md-4 mb-5">
-                      <div class="media-38289">
-                        <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                        <div class="text">
-                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
-                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                          <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                          <br>
-                          <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                         </div>
-                      </div>
-                    </div>
-                    <?php
-                          $no++;
-                        } ?>
-                      </div>
-                    </div>
-                    
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-          <?php
-          }
-          else if ($gander=='lk' && $jarak=='terjauh' && $harga=='tertinggi') {
+       
+          else if ($gander=='lk' && $jarak==$jarak && $harga=='tertinggi') {
     
             $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-            left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' ORDER BY c.harga DESC");
+            left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='lk' AND c.alamat LIKE '%".$jarak."%' ORDER BY c.harga DESC");
               $no = 1;
             while ($p = mysqli_fetch_assoc($ceksewa)) {
               ?>
@@ -531,47 +410,46 @@ if (isset($_POST['pilih'])) {
                 </div>
             <?php
             }
-   else if ($jarak=='terdekat') {
-      $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-      left join tbkos c on a.kdkos=c.kdkos where a.status='1' ORDER BY c.kampus DESC");
-        $no = 1;
-      while ($p = mysqli_fetch_assoc($ceksewa)) {
-        ?>
-                
-                <div class="col-md-4 mb-5">
-                  <div class="media-38289">
-                    <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                    <div class="text">
-                    <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
-                      <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                      <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                      <br>
-                      <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
+            else if ($jarak==$jarak) {
+              $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a left join tbkos c on a.kdkos=c.kdkos WHERE c.alamat LIKE '%".$jarak."%' AND a.status='1'");
+                $no = 1;
+              while ($p = mysqli_fetch_assoc($ceksewa)) {
+                ?>
+                        
+                        <div class="col-md-4 mb-5">
+                          <div class="media-38289">
+                            <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
+                            <div class="text">
+                            <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
+                              <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
+                              <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
+                              <br>
+                              <div class="row">
+                        <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
+                        <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
+                      </div>
+                            </div>
+                          </div>
+                        </div>
+                        <?php
+                              $no++;
+                            } ?>
+                          </div>
+                        </div>
+                        
+                            </div>
+                          </div>
+                        </div>
+                        
+                      </div>
                     </div>
                   </div>
-                </div>
-                <?php
-                      $no++;
-                    } ?>
-                  </div>
-                </div>
-                
-                    </div>
-                  </div>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-      <?php
-      }
+              <?php
+              }
      
-        else if ($jarak=='terdekat' && $harga=='tertinggi') {
+        else if ($jarak==$jarak && $harga=='tertinggi') {
           $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-          left join tbkos c on a.kdkos=c.kdkos where a.status='1'  ORDER BY c.kampus DESC ");
+          left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.alamat LIKE '%".$jarak."%' ORDER BY a.harga DESC");
             $no = 1;
           while ($p = mysqli_fetch_assoc($ceksewa)) {
             ?>
@@ -606,9 +484,9 @@ if (isset($_POST['pilih'])) {
               </div>
           <?php
           }
-          else if ($jarak=='terdekat' && $harga=='terendah') {
+          else if ($jarak==$jarak && $harga=='terendah') {
             $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-            left join tbkos c on a.kdkos=c.kdkos where a.status='1'  ORDER BY c.kampus DESC ");
+            left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.alamat LIKE '%".$jarak."%' ORDER BY a.harga ASC ");
               $no = 1;
             while ($p = mysqli_fetch_assoc($ceksewa)) {
               ?>
@@ -618,117 +496,6 @@ if (isset($_POST['pilih'])) {
                           <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
                           <div class="text">
                           <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
-                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                            <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                            <br>
-                            <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                          </div>
-                        </div>
-                      </div>
-                      <?php
-                            $no++;
-                          } ?>
-                        </div>
-                      </div>
-                      
-                          </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-            <?php
-            }
-      else if ($jarak=='terjauh') {
-        $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-        left join tbkos c on a.kdkos=c.kdkos where a.status='1' ORDER BY kampus DESC");
-          $no = 1;
-        while ($p = mysqli_fetch_assoc($ceksewa)) {
-          ?>
-                  
-                  <div class="col-md-4 mb-5">
-                    <div class="media-38289">
-                      <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                      <div class="text">
-                      <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
-                        <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                        <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                        <br>
-                        <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                      </div>
-                    </div>
-                  </div>
-                  <?php
-                        $no++;
-                      } ?>
-                    </div>
-                  </div>
-                  
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-        <?php
-        }
-        else if ($jarak=='terjauh' && $harga=='tertinggi') {
-          $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-          left join tbkos c on a.kdkos=c.kdkos where a.status='1'  ORDER BY c.kampus DESC ");
-            $no = 1;
-          while ($p = mysqli_fetch_assoc($ceksewa)) {
-            ?>
-                    
-                    <div class="col-md-4 mb-5">
-                      <div class="media-38289">
-                        <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                        <div class="text">
-                        <h5 class="mb-3"><a href="#"><strong><?= $p['namakos']; ?></a></strong></h5>
-                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                          <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                          <br>
-                          <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                        </div>
-                      </div>
-                    </div>
-                    <?php
-                          $no++;
-                        } ?>
-                      </div>
-                    </div>
-                    
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-          <?php
-          }
-          else if ($jarak=='terjauh' && $harga=='terendah') {
-            $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-            left join tbkos c on a.kdkos=c.kdkos where a.status='1'  ORDER BY c.kampus DESC ");
-              $no = 1;
-            while ($p = mysqli_fetch_assoc($ceksewa)) {
-              ?>
-                      
-                      <div class="col-md-4 mb-5">
-                        <div class="media-38289">
-                          <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                          <div class="text">
-                          <h5 class="mb-3"><a href="#"><strong><?= $p['namakos']; ?></a></strong></h5>
                             <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
                             <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
                             <br>
@@ -865,10 +632,10 @@ if (isset($_POST['pilih'])) {
           </div>
       <?php
       }
-      else if ($gander=='pr' && $jarak=='terdekat') {
+      else if ($gander=='pr' && $jarak==$jarak) {
     
         $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-        left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' ORDER BY c.kampus ASC");
+        left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' AND c.alamat LIKE '%".$jarak."%'");
           $no = 1;
         while ($p = mysqli_fetch_assoc($ceksewa)) {
           ?>
@@ -903,10 +670,10 @@ if (isset($_POST['pilih'])) {
             </div>
         <?php
         }
-        else if ($gander=='pr' && $jarak=='terdekat' && $harga=='terendah') {
+        else if ($gander=='pr' && $jarak==$jarak && $harga=='terendah') {
       
           $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-          left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' ORDER BY a.harga ASC");
+          left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' AND c.alamat LIKE '%".$jarak."%' ORDER BY a.harga ASC");
             $no = 1;
           while ($p = mysqli_fetch_assoc($ceksewa)) {
             ?>
@@ -941,10 +708,10 @@ if (isset($_POST['pilih'])) {
               </div>
           <?php
           }
-          else if ($gander=='pr' && $jarak=='terdekat' && $harga=='tertinggi') {
+          else if ($gander=='pr' && $jarak==$jarak && $harga=='tertinggi') {
       
             $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-            left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' ORDER BY a.harga DESC");
+            left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' c.alamat LIKE '%.$jarak.%' ORDER BY a.harga DESC");
               $no = 1;
             while ($p = mysqli_fetch_assoc($ceksewa)) {
               ?>
@@ -979,124 +746,7 @@ if (isset($_POST['pilih'])) {
                 </div>
             <?php
             }
-            
-    
-        else if ($gander=='pr' && $jarak=='terjauh') {
-      
-          $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-          left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' ORDER BY c.kampus DESC");
-            $no = 1;
-          while ($p = mysqli_fetch_assoc($ceksewa)) {
-            ?>
-                    
-                    <div class="col-md-4 mb-5">
-                      <div class="media-38289">
-                        <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                        <div class="text">
-                        <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
-                          <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                          <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                          <br>
-                          <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                        </div>
-                      </div>
-                    </div>
-                    <?php
-                          $no++;
-                        } ?>
-                      </div>
-                    </div>
-                    
-                        </div>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
-          <?php
-          }
-          else if ($gander=='pr' && $jarak=='terjauh' && $harga=='terendah') {
-      
-            $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-            left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' ORDER BY c.harga ASC");
-              $no = 1;
-            while ($p = mysqli_fetch_assoc($ceksewa)) {
-              ?>
-                      
-                      <div class="col-md-4 mb-5">
-                        <div class="media-38289">
-                          <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                          <div class="text">
-                          <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a></strong></h5>
-                            <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                            <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                            <br>
-                            <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                          </div>
-                        </div>
-                      </div>
-                      <?php
-                            $no++;
-                          } ?>
-                        </div>
-                      </div>
-                      
-                          </div>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
-                </div>
-            <?php
-            }
-            else if ($gander=='pr' && $jarak=='terjauh' && $harga=='tertinggi') {
-      
-              $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
-              left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' ORDER BY c.harga DESC");
-                $no = 1;
-              while ($p = mysqli_fetch_assoc($ceksewa)) {
-                ?>
-                        
-                        <div class="col-md-4 mb-5">
-                          <div class="media-38289">
-                            <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
-                            <div class="text">
-                            <h5 class="mb-3"><strong><a href="#"><?= $p['namakos']; ?></a><strong></h5>
-                              <h5 class="mb-3"><a href="#"><?= "Rp " . number_format($p['harga'], 0, ',', '.'); ?></a></h5>
-                              <span class="d-block small address d-flex align-items-center"> <span class="icon-room mr-3 text-primary"></span> <span><?php echo $p['alamat']; ?></span></span>
-                              <br>
-                              <div class="row">
-                <a href="penyewa/formsewa.php?id=<?= $p['kdkamar']; ?>" class="btn btn-success text-white px-4 py-3">Sewa</a>&nbsp;
-                <a href="penyewa/pesan.php?kodekos=<?= $p['kdkos']; ?>" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <?php
-                              $no++;
-                            } ?>
-                          </div>
-                        </div>
-                        
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </div>
-                    </div>
-                  </div>
-              <?php
-              }
-  
-          else if ($gander=='pr' && $harga=='terendah') {
+            else if ($gander=='pr' && $harga=='terendah') {
       
             $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.* from  tbkamar a
             left join tbkos c on a.kdkos=c.kdkos where a.status='1' AND c.jeniskos='pr' ORDER BY c.harga ASC");
