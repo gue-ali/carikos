@@ -167,7 +167,7 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
 
     
 
-    
+    <div style="padding-top: 50px">
       <div class="container">
         
         <div class="row">

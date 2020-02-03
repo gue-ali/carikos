@@ -82,9 +82,9 @@ $row1 = mysqli_fetch_array($result1);
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="index.php" class="nav-link">Beranda</a></li>
-                  <li><a href="about.php" class="nav-link">Tentang</a></li>
-                  <li><a href="contact.php" class="nav-link">Kontak</a></li>
+                  <a href="index.php" class="nav-link" style="color: white;">Beranda</a>
+                  <a href="#tentangs" class="nav-link item-scroll nav-item" style="color: white;">Tentang</a>
+                  <a href="#kontak" class="nav-link" style="color: white;">Kontak</a>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Akun
@@ -142,6 +142,25 @@ $row1 = mysqli_fetch_array($result1);
       </div>
     </div>
 
+           
+<section id="tentangs">
+    <div class="kolom">
+      <div class="container">
+    <p><strong>Carikos - Aplikasi Pencari Info Kost di Area kampus </strong></p>
+    <p >Carikos adalah sistem informasi pencarian kost di kabupaten jember berbasis web. fitur-fitur di dalam carikos yaitu fitur tambah kost, fitur filter kost, fitur pemesanan dan fitur chat. </p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <p><strong>Fitur Carikos </strong></p>
+    <li>fitur tambah kos : fitur ini diperuntukkan untuk user pemilik kot agar dapaf menambahkan dan mempromosikan kost mereka</li>
+    <li>fitur filter kost : fitur ini di peruntukkan untuk user pencari kost agar dapat mencari kost sesuai kebutuhan mereka</li>
+    <li>fitur chat : fitur ini di buat agar pemilik kost dapat memberikan info kost dan pencari kost dapat mendapatkan info kost lebih lanjut</li>
+     <li>fitur pemesanan : fitur ini di peruntukan untuk user pencari kost mengisu datadiri untuk melakukan pemesanan</li>
+            </div>
+            </div>
+            </section>
+
     <div class="site-section bg-white-6s">
       <div class="container">
       <h3 class="text-left" style="margin-top:-50px;"><strong>Rekomendasi untuk anda</strong></h3>
@@ -184,30 +203,13 @@ while ($p = mysqli_fetch_assoc($ceksewa)) {
     
     
 
-          
-
-    <div class="kolom">
-      <div class="container">
-    <p><strong>Carikos - Aplikasi Pencari Info Kost di Area kampus </strong></p>
-    <p >Carikos adalah sistem informasi pencarian kost di kabupaten jember berbasis web. fitur-fitur di dalam carikos yaitu fitur tambah kost, fitur filter kost, fitur pemesanan dan fitur chat. </p>
-    <br>
-    <br>
-    <br>
-    <br>
-    <p><strong>Fitur Carikos </strong></p>
-    <li>fitur tambah kos : fitur ini diperuntukkan untuk user pemilik kot agar dapaf menambahkan dan mempromosikan kost mereka</li>
-    <li>fitur filter kost : fitur ini di peruntukkan untuk user pencari kost agar dapat mencari kost sesuai kebutuhan mereka</li>
-    <li>fitur chat : fitur ini di buat agar pemilik kost dapat memberikan info kost dan pencari kost dapat mendapatkan info kost lebih lanjut</li>
-     <li>fitur pemesanan : fitur ini di peruntukan untuk user pencari kost mengisu datadiri untuk melakukan pemesanan</li>
-            </div>
-            </div>
-    
+   
     
 
 
 
    
-            <footer class="site-footer">
+            <footer class="site-footer" id="kontak">
       <div class="container">
         <div class="row">
         <div class="col-lg-4 ml-auto">

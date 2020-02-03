@@ -146,7 +146,7 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
     </div>
     
 
-    
+        <div style="padding-top: 50px">
       <div class="container">
       <div class="row">
         <?php
@@ -162,7 +162,6 @@ if (isset($_POST['pilih'])) {
       $no = 1;
     while ($p = mysqli_fetch_assoc($ceksewa)) {
       ?>
-              
               <div class="col-md-4 mb-5">
                 <div class="media-38289">
                   <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>

@@ -35,16 +35,12 @@ $ka = mysqli_fetch_array($kamar);
     <link rel="stylesheet" href="css/style.css">
     <style>
       
-.slide {
-  height: 100vh;
-  min-height: 630px;
-  background-size: cover; }
-  </style>
+
 
   </head>
   <style>
         body{
-            background-color: #e6dfdf;
+            background-color: white;
             background-size: cover;
         }
     </style>
@@ -110,74 +106,29 @@ $ka = mysqli_fetch_array($kamar);
 
       </header>
 
+      <div class="ftco-blocks-cover-1">
+      <div class="site-section-cover overlay" data-stellar-background-ratio="1" style="background-image: url('images/ii.jpg')">
+        <div class="container">
+          <div class="row align-items-center justify-content-center text-center">
+            <div class="col-md-7">
+              <h1 class="mb-2">Bingung mau cari kos di Jember?</h1>
+              <p>Dapatkan info kos murah serta info kos lainnya di Carikos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
       
-      
-    <div class="ftco-blocks-cover-1">
+    <div class="row">
+    <div class="d-block w-50" style="margin-top: 50px; margin-left:135px; ">
+    
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="img/<?php echo $ka['fotokos'];?>" alt="First slide">
-      <div class="carousel-caption" >
-          <div class="row align-items-center justify-content-center text-center" style="margin-top:-350px;" >
-            <div class="col-md-7">
-              <span class="h4 text-primary mb-4 d-block"><?= "Rp " . number_format($ka['harga'], 0, ',', '.'); ?></span>
-              <h1 class="mb-2"><?php echo $ka ['namakos']; ?></h1>
-              <br>
-              <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Sewa </a>&nbsp;
-                <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-                
-              
-            </div>
-          </div>
-        </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="img/<?php echo $ka['fotokos1'];?>" alt="Second slide">
-      <div class="carousel-caption" >
-          <div class="row align-items-center justify-content-center text-center" style="margin-top:-350px;" >
-            <div class="col-md-7">
-              <span class="h4 text-primary mb-4 d-block"><?= "Rp " . number_format($ka['harga'], 0, ',', '.'); ?></span>
-              <h1 class="mb-2"><?php echo $ka ['namakos']; ?></h1>
-              <br>
-              <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Sewa </a>&nbsp;
-                <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-                
-              
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/<?php echo $ka['fotokamar'];?>" alt="Third slide">
-      <div class="carousel-caption" >
-          <div class="row align-items-center justify-content-center text-center" style="margin-top:-350px;" >
-            <div class="col-md-7">
-              <span class="h4 text-primary mb-4 d-block"><?= "Rp " . number_format($ka['harga'], 0, ',', '.'); ?></span>
-              <h1 class="mb-2"><?php echo $ka ['namakos']; ?></h1>
-              <br>
-              <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Sewa </a>&nbsp;
-                <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-                
-              
-            </div>
-          </div>
-        </div>
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="img/<?php echo $ka['fotokamar1'];?>" alt="fourth slide" width=4608px height=650px>
-      <div class="carousel-caption" >
-          <div class="row align-items-center justify-content-center text-center" style="margin-top:-350px;" >
-            <div class="col-md-7">
-              <span class="h4 text-primary mb-4 d-block"><?= "Rp " . number_format($ka['harga'], 0, ',', '.'); ?></span>
-              <h1 class="mb-2"><?php echo $ka ['namakos']; ?></h1>
-              <br>
-              <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Sewa </a>&nbsp;
-                <a href="daftarpenyewa.php" class="btn btn-primary text-white px-4 py-3">Chat Pemilik</a>&nbsp;
-                
-              
-            </div>
-          </div>
-        </div>
+      <img class="d-block w-100" src="img/<?php echo $ka['fotokos1'];?>" alt="Second slide"> 
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -189,17 +140,31 @@ $ka = mysqli_fetch_array($kamar);
     <span class="sr-only">Next</span>
   </a>
 </div>
-<br>
-<br>
-       
+      </div>
+      <div class="row" style="padding: 50px; margin-bottom: -50px;">
+      <div class="card" style="width: 24rem;">
+        <div class="card-body">
+         <h4 class="card-title">Info:</h4>
+         <h2 class="mb-2"><strong><?php echo $ka ['namakos']; ?></strong></h2>
+              <span class="h4 text-primary mb-4 d-block"><?= "Rp " . number_format($ka['harga'], 0, ',', '.'); ?></span>
+              
+              <a href="daftarpenyewa.php" class="btn btn-success text-white px-4 py-3">Sewa </a>&nbsp;
+                <a href="daftarpenyewa.php" class="btn btn-info text-white px-4 py-3">Chat Pemilik</a>&nbsp;
+  </div>
+</div>
+      
+      </div>
+      
+      </div>
 
-        <div class="container">
-         <div class="card">
-          <div class="container">
-         <div class="card-body">
-          
-            
-               <h5 class="card-title">Fasilitas Bersama</h5>
+
+       <br>
+       <div class="container">
+       <div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4">
+    <div class="card h-100">
+      <div class="card-body">      
+        <h5 class="card-title">Fasilitas Bersama</h5>
                <?php
             $kamarmandi= $ka['kamarmandi'];
             $cekstatus="";
@@ -295,18 +260,17 @@ $ka = mysqli_fetch_array($kamar);
                <label class="form-check-label" for="defaultCheck1">
                   wifi  
                 </label>
-               </div>
-               </div>           
+         </div>
       </div>
-          </div>
-          </div>
-          <br>
-          <br>
-  <div class="container">        
-  <div class="card">
-  <div class="container">
-    <div class="card-body">
-      <h5 class="card-title">Area Lingkungan</h5><?php
+    </div>
+  </div>
+
+  <div class="col mb-4">
+    <div class="card h-100">
+      
+    <div class="card-body">   
+      <h5 class="card-title">Area Lingkungan</h5>
+      <?php
             $warungmakan= $ka['warungmakan'];
             $cekstatus="";
             if ($warungmakan==0) {
@@ -385,20 +349,14 @@ $ka = mysqli_fetch_array($kamar);
                <label class="form-check-label" for="defaultCheck1">
                   Masjid  
                 </label>
-               </div>     
-         </div>
-  </div>
           </div>
-  
-</div>
-</div>
-<br>
-<br>
-  <div class="container">        
-  <div class="card">
-  <div class="container">
-    <div class="card-body">
-            <h5 class="card-title">Fasilitas Kamar</h5>
+       </div> 
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">Fasilitas Kamar</h5>
               <?php
             $kasur= $ka['kasur'];
             $cekstatus="";
@@ -484,18 +442,13 @@ $ka = mysqli_fetch_array($kamar);
                  <input type="text" placeholder="luas kamar" name="luas" id="luas kamar" value="<?php echo $ka['luaskamar'];?>m" readonly>
                  
                 </div>
-               </div>
-              </div>
-            </div>
-           </div>
-          </div>
-          <br>
-          <br>
-    
-   
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 
-    
-
+      
           <footer class="site-footer">
       <div class="container">
         <div class="row">

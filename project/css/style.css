@@ -1,3 +1,7 @@
+/*slide*/
+.slide{
+  background-size: 100px;
+}
 /*kolom*/
 .kolom{
 	/*jumlah column*/
@@ -521,7 +525,7 @@ h1, h2, h3, h4, h5,
 
 .site-footer {
   padding: 5px 0;
-  background: white; }
+  background: #e7ebdd; }
   @media (min-width: 50%) {
     .site-footer {
       padding: 8em 0; } }
@@ -1387,10 +1391,7 @@ h1, h2, h3, h4, h5,
     color: #fff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
 
-.slide {
-  height: 100vh;
-  min-height: 900px;
-  background-size: cover; }
+
 
 .border-w-2 {
   border-width: 2px !important; }
