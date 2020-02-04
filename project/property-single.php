@@ -82,8 +82,6 @@ $row1 = mysqli_fetch_array($result1);
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="index.php" class="nav-link">Beranda</a></li>
-                  <li><a href="about.php" class="nav-link">About</a></li>
-                  <li><a href="contact.php" class="nav-link">Contact</a></li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Akun

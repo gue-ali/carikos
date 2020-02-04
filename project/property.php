@@ -72,8 +72,6 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto ">
                   <li class="active"><a href="index.php" class="nav-link">Beranda</a></li>
-                  <li><a href="about.php" class="nav-link">Tentang</a></li>
-                  <li><a href="contact.php" class="nav-link">Kontak</a></li>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Akun
@@ -166,8 +164,7 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
     </div>
 
     
-
-    <div style="padding-top: 50px">
+    <div style="padding-top: 15px">
       <div class="container">
         
         <div class="row">
@@ -223,7 +220,7 @@ if (isset($_POST['pilih'])) {
       $no = 1;
       while ($p = mysqli_fetch_assoc($ceksewa)) {
         ?>
-                
+              
                 <div class="col-md-4 mb-5">
                   <div class="media-38289">
                     <a href="property-single.php?id=<?= $p['kdkamar']; ?>" class="d-block"><?php echo "<img src='img/" . $p['fotokos'] . "' alt='Image' class='img-fluid'>"?></a>
