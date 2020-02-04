@@ -42,7 +42,7 @@ include "../koneksi.php";
         <div class="profile-page sidebar-collapse">
             <nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="400">
                 <div class="container">
-                    <div class="navbar-translate"><a class="navbar-brand" href="../profilpenyewa.php" rel="tooltip">kembali</a>
+                    <div class="navbar-translate"><a style="color: #91b029 ;" class="navbar-brand" href="../profilpenyewa.php" rel="tooltip">kembali</a>
                         <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-bar bar1"></span><span class="navbar-toggler-bar bar2"></span><span class="navbar-toggler-bar bar3"></span></button>
                     </div>
                 

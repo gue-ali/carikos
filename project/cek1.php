@@ -11,7 +11,7 @@ $cek1 = mysqli_num_rows($query1);
 if ($cek1 > 0) {
     session_start();
     $data = mysqli_fetch_array($query1);
-    $_SESSION['kode'] = $data['kdpenyewa'];
+    $_SESSION['kode'] = $data['nopenyewa'];
     $_SESSION['username'] = $username;
     $_SESSION['status'] = 'login';
     header("location: index.php");

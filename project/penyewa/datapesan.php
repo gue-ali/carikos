@@ -37,7 +37,7 @@ if (isset($_GET['aksi'])) {
               <?php
               $nt = ['Batal', 'Menunggu Konfirmasi', 'Di terima', 'Di Tolak', 'Selesai'];
               $no = 1;
-              while ($p = mysqli_fetch_assoc($ceksewa)) {
+              while ($p = mysqli_fetch_assoc($ceksewa) ) {
                 ?>
                 <tr>
                   <td><?= $no; ?></td>

@@ -186,96 +186,115 @@ $row1 = mysqli_fetch_array($result1);
                <?php
             $kamarmandi= $ka['kamarmandi'];
             $cekstatus="";
+            $hidden="";
             if ($kamarmandi==0) {
+              $hidden="hidden";
               $cekstatus="";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
+
                <div class="form-check">
-                <?php echo "<input class='form-check-input' type='checkbox' name='mandiluar' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-                <label class="form-check-label" for="defaultCheck1">
+                <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='mandiluar' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+                <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Kamar mandi luar
                 </label>
                </div>
                <?php
             $dapur= $ka['dapur'];
             $cekstatus="";
+            $hidden="";
             if ($dapur==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='dapur' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='dapur' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Dapur
                 </label>
                </div>
                <?php
             $jemuran= $ka['jemuran'];
             $cekstatus="";
+            $hidden="";
             if ($jemuran==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='jemuran' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='jemuran' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Ruang Jemur
                 </label>
                </div>
                <?php
             $tv= $ka['televisi'];
             $cekstatus="";
+            $hidden="";
             if ($tv==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='tv' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
-                  Tv
+               <?php echo "<input class='form-check-input' type='checkbox' style='display:none' name='tv' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
+                  Tv 
                 </label>
                </div>
                <?php
             $parkiran= $ka['Parkiran'];
             $cekstatus="";
+            $hidden="";
             if ($parkiran==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='parkiran' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input class='form-check-input' style='display:none' type='checkbox' name='parkiran' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Parkiran  
                 </label>
                </div>
                <?php
             $wifi= $ka['wifi'];
             $cekstatus="";
+            $hidden="";
             if ($wifi==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='wifi' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='wifi' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   wifi  
                 </label>
          </div>
@@ -291,80 +310,95 @@ $row1 = mysqli_fetch_array($result1);
       <?php
             $warungmakan= $ka['warungmakan'];
             $cekstatus="";
+            $hidden="";
             if ($warungmakan==0) {
               $cekstatus="";
+            $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+            $hidden="";
             }
             ?>
       <div class="form-check">
-                <?php echo "<input class='form-check-input' type='checkbox' name='warungmakan' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+                <?php echo "<input class='form-check-input' type='checkbox' style='display:none' name='warungmakan' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Warung makan
                 </label>
                </div>
                <?php
             $kampus= $ka['kampus'];
             $cekstatus="";
+            $hidden="";
             if ($kampus==0) {
               $cekstatus="";
+            $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='kampus' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input class='form-check-input' style='display:none' type='checkbox' name='kampus' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Kampus/ sekolah
                 </label>
                </div>
                <?php
             $minimarket= $ka['minimarket'];
             $cekstatus="";
+            $hidden="";
             if ($minimarket==0) {
               $cekstatus="";
+            $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='ninimarket' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='ninimarket' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Mini market
                 </label>
                </div>
                <?php
             $atm= $ka['atm'];
             $cekstatus="";
+            $hidden="";
             if ($atm==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='atm' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input class='form-check-input' type='checkbox' name='atm' value='1' style='display:none' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   ATM/ bank
                 </label>
                </div>
                <?php
             $masjid= $ka['masjid'];
             $cekstatus="";
+            $hidden="";
             if ($masjid==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='masjid' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input class='form-check-input' type='checkbox' style='display:none' name='masjid' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Masjid  
                 </label>
           </div>
@@ -378,94 +412,117 @@ $row1 = mysqli_fetch_array($result1);
               <?php
             $kasur= $ka['kasur'];
             $cekstatus="";
+            $hidden="";
             if ($kasur==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='kasur' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input class='form-check-input' style='display:none' type='checkbox' name='kasur' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Kasur
                 </label>
                </div>
                <?php
             $kursi= $ka['kursi'];
             $cekstatus="";
+            $hidden="";
             if ($kursi==0) {
               $cekstatus="";
+            $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+            $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='kursi' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='kursi' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Kursi belajar
                 </label>
                </div>
                <?php
             $lemari= $ka['lemari'];
             $cekstatus="";
+            $hidden="";
             if ($lemari==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+            $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='lemari' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='lemari' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Lemari
                 </label>
                </div>
                <?php
             $meja= $ka['mejabelajar'];
             $cekstatus="";
+            $hidden="";
             if ($meja==0) {
               $cekstatus="";
+            $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+            $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='meja' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input style='display:none' class='form-check-input' type='checkbox' name='meja' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   Meja Belajar
                 </label>
                </div>
                <?php
             $cermin= $ka['cermin'];
             $cekstatus="";
+            $hidden="";
             if ($cermin==0) {
               $cekstatus="";
+              $hidden="hidden";
             }
             else {
               $cekstatus="checked";
+              $hidden="";
             }
             ?>
                <div class="form-check">
-               <?php echo "<input class='form-check-input' type='checkbox' name='cermin' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
-               <label class="form-check-label" for="defaultCheck1">
+               <?php echo "<input class='form-check-input' type='checkbox' style='display:none' name='cermin' value='1' id='defaultCheck1' ".$cekstatus." onclick='return false;'>";?>
+               <label class="form-check-label" for="defaultCheck1" <?= $hidden?>>
                   cermin
                 </label>
                   </div>
                </div>
                <div class="col-md-12 form-group">
                  <input type="text" placeholder="luas kamar" name="luas" id="luas kamar" value="<?php echo $ka['luaskamar'];?>m" readonly>
-                 
                 </div>
       </div>
     </div>
   </div>
 </div>
 </div>
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
 
 <footer class="site-footer" id="kontak">
       <div class="container">

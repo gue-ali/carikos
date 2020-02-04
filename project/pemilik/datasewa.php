@@ -90,8 +90,7 @@ if (isset($_GET['aksi'])) {
                       $status = $p['status_sewa'];
                       if ($status == "1") { ?>
 
-                      <a href="datasewa.php?id=<?= $p['kode_sewa']; ?>&
-                      \aksi=reject" style="color: red;" onclick="return confirm('Apakah anda yakin ingin menolak penyewaan ini?')">Tolak</a>&nbsp;
+                      <a href="datasewa.php?id=<?= $p['kode_sewa']; ?>&aksi=reject" style="color: red;" onclick="return confirm('Apakah anda yakin ingin menolak penyewaan ini?')">Tolak</a>&nbsp;
                       <a href="datasewa.php?id=<?= $p['kode_sewa']; ?>&aksi=acc" onclick="return confirm('Apakah anda yakin ingin menerima penyewaan ini?')">Terima</a>&nbsp;
                     <?php
                       } else  if ($status == "2") { ?>

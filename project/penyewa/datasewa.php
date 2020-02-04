@@ -2,7 +2,7 @@
 session_start();
 include 'inc/header.php';
 $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  where nopenyewa='$_SESSION[kode]'"));
-$ceksewa = mysqli_query($koneksi, "SELECT a.*, b.harga, c.namakos, c.kdpemilik from sewa a 
+$ceksewa = mysqli_query($koneksi, "SELECT a.*, b.harga, c.namakos, c.kdpemilik, c.kdkos from sewa a 
 left join tbkamar b on a.kdkamar=b.kdkamar
 left join tbkos c on b.kdkos=c.kdkos where a.nopenyewa='$_SESSION[kode]'");
 

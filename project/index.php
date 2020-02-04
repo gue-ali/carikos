@@ -6,6 +6,9 @@ $dasewa = mysqli_fetch_array(mysqli_query($koneksi, "SELECT * from tbpenyewa  wh
 $ceksewa = mysqli_query($koneksi, "SELECT a.*, c.kdkos, c.namakos, c.fotokos, c.kdpemilik, c.alamat from  tbkamar a
 left join tbkos c on a.kdkos=c.kdkos where a.status='1'");
 
+$ak = mysqli_query($koneksi, "SELECT a.*, c.namakos, c.kdpemilik from chat a left join tbkos c on a.kdkos=c.kdkos where a.id_penyewa='$_SESSION[kode]'");
+$p = mysqli_fetch_assoc($ak);
+
 $result = mysqli_query($koneksi, "SELECT * FROM tbpemilik WHERE username='".$_SESSION['username']."'");
 $row = mysqli_fetch_array($result);
 
@@ -85,6 +88,7 @@ $row1 = mysqli_fetch_array($result1);
                   <a href="index.php" class="nav-link" style="color: white;">Beranda</a>
                   <a href="#tentangs" class="nav-link item-scroll nav-item" style="color: white;">Tentang</a>
                   <a href="#kontak" class="nav-link" style="color: white;">Kontak</a>
+                  <a href="penyewa/datapesan.php?id=<?= $p['id_chat']; ?>" class="nav-link" style="color: white;"><?= $p['noread_penyewa']; ?> Pesan</a>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Akun
