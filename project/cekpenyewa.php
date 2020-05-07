@@ -20,7 +20,7 @@ $password = $_POST['password'];
 $nama = $_FILES['fotoktp']['name'];
 $file_tmp = $_FILES['fotoktp']['tmp_name'];
 $password = $_POST['password'];
-$pass2 = $_POST['commfrimpassword'];
+$pass2 = $_POST['confrimpassword'];
 
 if ($password == $pass2){
 mysqli_query($koneksi,"INSERT INTO `tbpenyewa`(`nopenyewa`, `noktp`, `nama`, `alamat`, `nohp`, `username`, `password`, `email`, `fotoktp`, `fotoprofil`) VALUES (NULL'$noktp','$name','$alamat','$nohp','$username','$password','$email','$nama','index.png')");

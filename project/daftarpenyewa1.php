@@ -61,9 +61,9 @@
                              <input type="password" placeholder="Password" name="password" id="password" required>
                          </div>
                          <div class="password">
-                             <input type="password" placeholder="Commfrim password" name="commfrimpassword" id="password" required>
+                             <input type="password" placeholder="Confrim password" name="confrimpassword" id="password" required>
                          </div>
-                         <h5 class="textbox">masukkan foto ktp</h5>
+                         <div style="color: white;" class="text">masukkan foto ktp</div>
                     <div class="textbox">
                     <input type="file" name="fotoktp" required>
                     </div>

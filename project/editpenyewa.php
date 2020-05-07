@@ -70,7 +70,7 @@ $row = mysqli_fetch_array($result1);
                              <input type="password" placeholder="Password" name="password" id="password" required>
                          </div>
                          <div class="password">
-                             <input type="password" placeholder="Commfrim password" name="commfrimpassword" id="password" required>
+                             <input type="password" placeholder="Confrim password" name="confrimpassword" id="password" required>
                              
                          <h5 class="textbox">masukkan foto profil</h5>
                     <div class="textbox">

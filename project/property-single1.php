@@ -119,7 +119,6 @@ $ka = mysqli_fetch_array($kamar);
       
     <div class="row">
     <div class="d-block w-50" style="margin-top: 50px; margin-left:135px; ">
-    
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">

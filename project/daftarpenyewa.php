@@ -49,8 +49,8 @@
                          <div class="login-btn">
                              <input class="btn2" type="submit" name="login" value="Login">
                          </div>
-                         <a href="penyewa/reset.php">Lupa password? </a>
-                         <p style="color: white;">Belum punya akun? <a href="daftarpenyewa1.php">Daftar sekarang</a></p> 
+                         <a style="color: white;" href="penyewa/reset.php">Lupa password? </a>
+                         <p style="color: white;">Belum punya akun? <a style="color: white;" href="daftarpenyewa1.php">Daftar sekarang</a></p> 
                         
                     </div>
                     

@@ -13,7 +13,7 @@ $nohp = $_POST['nohp'];
 $alamat = $_POST['alamat'];
 $email = $_POST['email'];
 $password = $_POST['password'];
-$pass2 = $_POST['commfrimpassword'];
+$pass2 = $_POST['confrimpassword'];
 $nama = $_FILES['fotoprofil']['name'];
 $file_tmp = $_FILES['fotoprofil']['tmp_name'];
 
